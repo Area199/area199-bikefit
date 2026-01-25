@@ -21,7 +21,8 @@ def processa_video(video_path):
     height = int(cap.get(cv2.CAP_PROP_FRAME_HEIGHT))
     fps = int(cap.get(cv2.CAP_PROP_FPS))
     tfile = tempfile.NamedTemporaryFile(delete=False, suffix='.mp4')
-    out = cv2.VideoWriter(tfile.name, cv2.VideoWriter_fourcc(*'mp4v'), fps, (width, height))
+    # Usa avc1 (H.264) che è compatibile con tutti i browser
+    out = cv2.VideoWriter(tfile.name, cv2.VideoWriter_fourcc(*'avc1'), fps, (width, height))
     
     dati_angoli = []
     
