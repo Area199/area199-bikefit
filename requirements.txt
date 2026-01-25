@@ -3,3 +3,4 @@ mediapipe
 opencv-python-headless
 numpy
 pandas
+protobuf==3.20.3
